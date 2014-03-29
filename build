@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+if [ ! -h src/github.com/gooncx/gooncx ]; then
+  mkdir -p src/github.com/gooncx
+  ln -s ../../.. src/github.com/gooncx/gooncx
+fi
+
+export GOBIN=${PWD}/bin
+export GOPATH=${PWD}
+
+go install github.com/gooncx/gooncx
